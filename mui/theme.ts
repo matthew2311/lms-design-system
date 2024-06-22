@@ -122,80 +122,49 @@ export const themes = createTheme({
           height: 24,
           padding: '0 8px 0 8px',
         }),
-        containedPrimary: ({ theme }) => ({
-          background: `transparent linear-gradient(0deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary['100']} 100%) 0% 0% no-repeat padding-box`,
-          ':hover': {
-            background: `transparent linear-gradient(0deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.main} 100%) 0% 0% no-repeat padding-box`,
-          },
-        }),
-        containedSecondary: ({ theme }) => ({
-          background: `transparent linear-gradient(0deg, ${theme.palette.secondary.main} 0%, ${theme.palette.secondary['100']} 100%) 0% 0% no-repeat padding-box`,
-          ':hover': {
-            background: `transparent linear-gradient(0deg, ${theme.palette.secondary.main} 0%, ${theme.palette.secondary.main} 100%) 0% 0% no-repeat padding-box`,
-          },
-        }),
-        containedError: ({ theme }) => ({
-          background: `transparent linear-gradient(0deg, ${theme.palette.error.main} 0%, ${theme.palette.error['100']} 100%) 0% 0% no-repeat padding-box`,
-          ':hover': {
-            background: `transparent linear-gradient(0deg, ${theme.palette.error.main} 0%, ${theme.palette.error.main} 100%) 0% 0% no-repeat padding-box`,
-          },
-        }),
-        containedWarning: ({ theme }) => ({
-          background: `transparent linear-gradient(0deg, ${theme.palette.warning.main} 0%, ${theme.palette.warning['100']} 100%) 0% 0% no-repeat padding-box`,
-          ':hover': {
-            background: `transparent linear-gradient(0deg, ${theme.palette.warning.main} 0%, ${theme.palette.warning.main} 100%) 0% 0% no-repeat padding-box`,
-          },
-        }),
-      containedInfo: ({ theme }) => ({
-          background: `transparent linear-gradient(0deg, ${theme.palette.info.main} 0%, ${theme.palette.info.main} 100%) 0% 0% no-repeat padding-box`,
-          ':hover': {
-            background: `transparent linear-gradient(0deg, ${theme.palette.info['100']} 0%, ${theme.palette.info['100']} 100%) 0% 0% no-repeat padding-box`,
-          },
-        }),
       },
     },
-  },
-  palette: {
-    background: {
-      default: '#ffffff ',
+    palette: {
+      background: {
+        default: '#ffffff ',
+      },
+      primary: {
+        main: '#F18700',
+        '100': '#F39F33',
+        contrastText: '#fff',
+      },
+      secondary: {
+        main: '#999999',
+        '400': '#9A9A9A',
+        '100': '#B3B3B3',
+        contrastText: '#fff',
+      },
+      error: {
+        main: '#9F041B',
+        '100': '#F5515F',
+        contrastText: '#fff',
+      },
+      warning: {
+        main: '#028ED5',
+        '100': '#026CA2',
+        contrastText: '#fff',
+      },
+      info: {
+        main: '#fff',
+        '100': '#BBBBBB',
+        contrastText: '#000',
+      },
     },
-    primary: {
-      main: '#F18700',
-      '100': '#F39F33',
-      contrastText: '#fff',
+    typography: {
+      fontFamily: ['Open Sans', 'sans-serif'].join(','),
+      label: {
+        color: '#333333',
+        fontSize: 12,
+        marginBottom: '8px !important',
+      },
+      error: {
+        color: '#D12119',
+        fontSize: 12,
+      },
     },
-    secondary: {
-      main: '#999999',
-      '400': '#9A9A9A',
-      '100': '#B3B3B3',
-      contrastText: '#fff',
-    },
-    error: {
-      main: '#9F041B',
-      '100': '#F5515F',
-      contrastText: '#fff',
-    },
-    warning: {
-      main: '#028ED5',
-      '100': '#026CA2',
-      contrastText: '#fff',
-    },
-    info: {
-      main: '#fff',
-      '100': '#BBBBBB',
-      contrastText: '#000',
-    },
-  },
-  typography: {
-    fontFamily: ['Open Sans', 'sans-serif'].join(','),
-    label: {
-      color: '#333333',
-      fontSize: 12,
-      marginBottom: '8px !important',
-    },
-    error: {
-      color: '#D12119',
-      fontSize: 12,
-    },
-  },
-});
+  });

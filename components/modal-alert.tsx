@@ -1,7 +1,8 @@
 import { Box, Button, Modal, Stack, Typography } from '@mui/material';
-import { IcnAlert } from 'assets/icon';
+import IcnAlert from '../icons/IcnAlert';
 import { useEffect, useState } from 'react';
-import { modalAlertStyle } from 'styles/common/modal-alert';
+
+type VariantType = 'success' | 'failed' | 'info';
 
 export function ModalAlert({
   variant = 'success',
@@ -16,7 +17,7 @@ export function ModalAlert({
   modalStyle,
   buttonStyle,
 }: {
-  variant?: string;
+  variant?: VariantType;
   open: boolean;
   message?: string | JSX.Element;
   title?: React.ReactNode;
@@ -44,7 +45,7 @@ export function ModalAlert({
     info: { title: 'Info', icon: <IcnAlert type={'info'} /> },
   };
 
-  const handleClose = (_, reason) => {
+  const handleClose = (_: any, reason: any) => {
     if (reason === 'backdropClick') return;
     onClose?.();
     setIsOpen(false);
@@ -65,30 +66,50 @@ export function ModalAlert({
   }, [open]);
 
   return (
-    <Modal open={isOpen} onClose={handleClose} sx={modalAlertStyle.modalAlert} disableEnforceFocus>
+    <Modal open={isOpen} onClose={handleClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} disableEnforceFocus>
       <Stack
         sx={{
-          ...modalAlertStyle.modalAlertContainer,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          minHeight: '394px',
+          background: 'white',
+          borderRadius: '6px',
+          outline: 0,
           width: modalStyle?.width || { xs: '95%', sm: '450px' },
           height: modalStyle?.height && modalStyle.height,
           padding: modalStyle?.padding || '24px',
         }}
       >
-        <Box sx={modalAlertStyle.modalAlertLogo}>
+        <Box sx={{ width: '180px', height: '180px', objectFit: 'cover', mb: '8px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           {content[variant].icon}
         </Box>
-        <Stack sx={modalAlertStyle.modalAlertContent}>
-          <Typography sx={{ ...modalAlertStyle.modalAlertTitle }}>
+        <Stack
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Typography sx={{ color: '#333333', fontSize: '32px', textAlign: 'center' }}>
             {title || content[variant].title}
           </Typography>
-          <Typography sx={modalAlertStyle.modalAlertDesc}>{message}</Typography>
+          <Typography sx={{ color: '#333333', fontSize: '14px', textAlign: 'center' }}>{message}</Typography>
         </Stack>
         <Stack direction="row" justifyContent="center" gap={1}>
           {onCancel && (
             <Button
               variant="contained"
               color="secondary"
-              sx={modalAlertStyle.modalAlertButton}
+              sx={{
+                padding: '10px 60px',
+                textTransform: 'uppercase',
+                mt: '30px',
+                width: '100%',
+              }}
               onClick={handleCancel}
             >
               {btnCancelText || 'Cancel'}
@@ -99,7 +120,8 @@ export function ModalAlert({
             variant="contained"
             color="primary"
             sx={{
-              ...modalAlertStyle.modalAlertButton,
+              textTransform: 'uppercase',
+              mt: '30px',
               width: buttonStyle?.width || '100%',
               height: buttonStyle?.height && buttonStyle.height,
               padding: buttonStyle?.padding || '10px 60px',

@@ -124,47 +124,48 @@ export const themes = createTheme({
         }),
       },
     },
-    palette: {
-      background: {
-        default: '#ffffff ',
-      },
-      primary: {
-        main: '#F18700',
-        '100': '#F39F33',
-        contrastText: '#fff',
-      },
-      secondary: {
-        main: '#999999',
-        '400': '#9A9A9A',
-        '100': '#B3B3B3',
-        contrastText: '#fff',
-      },
-      error: {
-        main: '#9F041B',
-        '100': '#F5515F',
-        contrastText: '#fff',
-      },
-      warning: {
-        main: '#028ED5',
-        '100': '#026CA2',
-        contrastText: '#fff',
-      },
-      info: {
-        main: '#fff',
-        '100': '#BBBBBB',
-        contrastText: '#000',
-      },
+  },
+  palette: {
+    background: {
+      default: '#ffffff ',
     },
-    typography: {
-      fontFamily: ['Open Sans', 'sans-serif'].join(','),
-      label: {
-        color: '#333333',
-        fontSize: 12,
-        marginBottom: '8px !important',
-      },
-      error: {
-        color: '#D12119',
-        fontSize: 12,
-      },
+    primary: {
+      main: '#F18700',
+      '100': '#F39F33',
+      contrastText: '#fff',
     },
-  });
+    secondary: {
+      main: '#999999',
+      '400': '#9A9A9A',
+      '100': '#B3B3B3',
+      contrastText: '#fff',
+    },
+    error: {
+      main: '#9F041B',
+      '100': '#F5515F',
+      contrastText: '#fff',
+    },
+    warning: {
+      main: '#028ED5',
+      '100': '#026CA2',
+      contrastText: '#fff',
+    },
+    info: {
+      main: '#fff',
+      '100': '#BBBBBB',
+      contrastText: '#000',
+    },
+  },
+  typography: {
+    fontFamily: ['Open Sans', 'sans-serif'].join(','),
+    label: {
+      color: '#333333',
+      fontSize: 12,
+      marginBottom: '8px !important',
+    },
+    error: {
+      color: '#D12119',
+      fontSize: 12,
+    },
+  },
+});

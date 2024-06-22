@@ -1,5 +1,0 @@
-@import './grid-layout.css';
-
-html::-webkit-scrollbar {
-  display: none;
-}

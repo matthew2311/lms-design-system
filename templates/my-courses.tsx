@@ -8,8 +8,9 @@ import Face from '@mui/icons-material/Face';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
-import { SelectSearch } from "components/SelectSearch";
-import { IcnNotes, IcnWebClassCode } from "assets/icon";
+import { SelectSearch } from "../components/SelectSearch";
+import IcnNotes from "../icons/IcnNotes";
+import IcnWebClassCode from "../icons/IcnWebClassCode";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 export function MyCoursesPage() {
